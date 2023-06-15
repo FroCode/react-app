@@ -16,6 +16,7 @@ const Home = () => {
     return (
         <div className="home">
             <BlogList blogs={blogs} handleDelete={handleDelete} />
+            <BlogList blogs={blogs} />
         </div>
     );
 }
