@@ -12,11 +12,12 @@ const Home = () => {
         
     }
     useEffect(() => { 
-        fetch('http://localhost:8000/blogs').then(res => {
-            res.json()
+        fetch('http://localhost:8000/blogs/').then(res => {
+            return res.json()
         })
         .then(data => {
             setBlogs(data);
+            console.log(data);
         });
     },[]);  
     return (
