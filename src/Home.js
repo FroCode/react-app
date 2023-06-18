@@ -16,11 +16,13 @@ const Home = () => {
     
     useEffect(() => { 
         setTimeout(() => {
-            fetch('http://localhost:8000/blogs/').then(res => {
+            fetch('http://localhost:8000/blogss/').then(res => {
                 console.log(res);
                 if(!res.ok){
                     throw Error('Could not fetch the data for that resource');
-                } 
+                    
+                }
+                
                 return res.json()
             })
             .then(data => {
@@ -28,16 +30,18 @@ const Home = () => {
                 setPending(false);
             }).catch(err => {
                 console.log(err.message);
+                setError(err.message);
                 
 
             });
             
-        },);
+        },1000);
        
     },[]);  
     return (
         
         <div className="home">
+            {error && <div>{error}</div>}
             {pending && <div className='loading'>Loading...</div>}
             {blogs && <BlogList blogs={blogs} handleDelete={handleDelete} title="All Blogs !" />}
             
