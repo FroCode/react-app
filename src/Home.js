@@ -3,7 +3,7 @@ import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 
-const Home = (handleDelete) => {
+const Home = () => {
     // Start My Component
     
     const { data: blogs , pending, error } = useFetch('http://localhost:8000/blogs/');
