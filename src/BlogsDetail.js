@@ -6,14 +6,17 @@ const BlogDetail = () => {
     return ( 
         <div className="blog-details">
         <h2>Blog Details - {id}</h2>
-        { blog && <div>
+        { error && <div>{error}</div>}
+        { pending && <div>Loading...</div>}
+        { blog && ( <article>
             {blog.body}
             <h1>{blog.title}</h1>
             <p>Written By: {blog.author}</p>
             <span>{blog.date}</span>
             <span>{blog.author}</span>
             
-            </div>}
+
+            </article>)}
           
         </div>
      );
