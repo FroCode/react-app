@@ -3,16 +3,31 @@ import { useState } from 'react';
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState("");
+    const [author, setAuthor] = useState("FroCode");
+    const [pending, setPending] = useState(false);
+    
+
     const handleSubmit = (e) => {
+
         e.preventDefault();
         const blog = { title, body, author };
-        console.log(blog);
+        setPending(true);
+       
+        
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(blog)
+            
+        }).then(() => {
+            setPending(false);
+        })
         
     }
     return (
         <div className="create">
             <h2>Add a New Blog</h2>
+           
         <form onSubmit={handleSubmit}>
             <label>Blog Title:</label>
             <input type="text"  value={title} onChange={(e) => {
@@ -27,8 +42,10 @@ const Create = () => {
                 <option  value="Abdo">Abdo</option>
                 <option value="FroCode">FroCode</option>
             </select>
-            <button >Add Blog</button>
-            <p>{author}</p>
+            { !setPending && <button >Add Blog</button>}
+            { setPending && <button disabled >Adding Blogs....</button>}
+
+            
         </form>
         </div>
     )
