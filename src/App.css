@@ -1,7 +1,16 @@
 * {
   margin: 0;
   font-family: Inter;
-  color: #333;
+  color: #fff;
+  
+}
+body {
+  background: #2d2d2d;
+}
+input , form , select , textarea {
+  color: #1497fc;
+  font-weight: bold;
+  border-radius: 10px;
 }
 .navbar {
   align-items: center;
@@ -10,9 +19,10 @@
   border-bottom: 1px solid #f2f2f2;
   display: flex;
   padding: 20px;
+  
 }
 .navbar h1 {
-  color: #f1356d;
+  color: #1497fc;
 }
 .navbar .links {
   margin-left: auto;
@@ -21,9 +31,13 @@
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+  color: #fff;
+}
+h2 {
+  color: #fff;
 }
 .navbar a:hover {
-  background: #f1356d;
+  background: #1497fc;
   color: white;
   transition: 0.2s;
 }
@@ -35,7 +49,8 @@
 .blogPreview {
   padding: 10px 16px ;
   margin: 20px 0;
-  border-bottom: 1px solid #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
 }
 .blogPreview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
@@ -43,7 +58,7 @@
 .blogPreview h2 {
   font-size: 20px;
   margin-bottom: 8px;
-  color: #f1356d;
+  color: #1497fc;
 }
 .blog-list .blogPreview  span {
   display: block;
@@ -59,7 +74,7 @@
 }
 .create h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #1497fc;
   margin-bottom: 30px;
 }
 .create select , .create input , .create label , .create textarea {
@@ -71,7 +86,7 @@
   border: 1px solid #f2f2f2;
 }
 .create button {
-  background: #f1356d;
+  background: #1497fc;
   color: #fff;
   border: 0;
   padding: 8px;
